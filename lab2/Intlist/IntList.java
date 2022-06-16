@@ -84,7 +84,6 @@ public class IntList {
         //TODO:  fill in method
         IntList P = A;
         while(P.rest != null){
-            P.first = P.first;
             P = P.rest;
         }
 
@@ -98,11 +97,13 @@ public class IntList {
      */
     public static IntList catenate(IntList A, IntList B) {
         //TODO:  fill in method
-        IntList res = new IntList(A.first,null);
+        if (A == null) {
+            return null;
+        }
+        IntList res = new IntList(A.first,catenate(A.rest,null));
         IntList p = res;
-        while (A.rest != null){
-            p.first = A.first;
-            p = A.rest;
+        while (p.rest != null){
+            p = p.rest;
         }
         p.rest = B;
 
