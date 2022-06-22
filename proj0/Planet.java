@@ -96,36 +96,5 @@ public class Planet {
     }
 
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Planet planet = (Planet) o;
-
-        if (Double.compare(planet.xxPos, xxPos) != 0) return false;
-        if (Double.compare(planet.yyPos, yyPos) != 0) return false;
-        if (Double.compare(planet.xxVel, xxVel) != 0) return false;
-        if (Double.compare(planet.yyVel, yyVel) != 0) return false;
-        if (Double.compare(planet.mass, mass) != 0) return false;
-        return imgFileName.equals(planet.imgFileName);
-    }
-
-    @Override
-    public int hashCode() {
-        int result;
-        long temp;
-        temp = Double.doubleToLongBits(xxPos);
-        result = (int) (temp ^ (temp >>> 32));
-        temp = Double.doubleToLongBits(yyPos);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
-        temp = Double.doubleToLongBits(xxVel);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
-        temp = Double.doubleToLongBits(yyVel);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
-        temp = Double.doubleToLongBits(mass);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
-        result = 31 * result + imgFileName.hashCode();
-        return result;
-    }
+    
 }

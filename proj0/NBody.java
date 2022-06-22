@@ -11,7 +11,7 @@ public class NBody {
         return radius;
     }
 
-    public static int readPlanetCount(String filename){
+    private static int readPlanetCount(String filename){
         In in = new In(filename);
 
         return in.readInt();
