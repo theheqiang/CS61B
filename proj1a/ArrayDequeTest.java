@@ -34,15 +34,39 @@ public class ArrayDequeTest {
 
     @Test
     public void testRemove(){
-//        ArrayDeque<Integer> arrayList = new ArrayDeque<>();
-//
-//        arrayList.addFirst(10);
-//        arrayList.addFirst(20);
-//        arrayList.addFirst(30);
-//        arrayList.addFirst(40);
-//        arrayList.removeFirst();
-//        arrayList.removeLast();
-//        arrayList.printDeque();
+        ArrayDeque<Integer> arrayList = new ArrayDeque<>();
+
+        arrayList.addFirst(10);
+        arrayList.addFirst(20);
+        arrayList.addFirst(30);
+        arrayList.addFirst(40);
+        arrayList.addFirst(10);
+        arrayList.addFirst(20);
+        arrayList.addFirst(30);
+        arrayList.addFirst(40);
+        arrayList.addFirst(10);
+        arrayList.addFirst(20);
+        arrayList.addFirst(30);
+        arrayList.addFirst(40);
+        arrayList.addFirst(10);
+        arrayList.addFirst(20);
+        arrayList.addFirst(30);
+        arrayList.addFirst(40);
+        arrayList.addFirst(10);
+        arrayList.addFirst(20);
+        arrayList.addFirst(30);
+        arrayList.addFirst(40);
+        arrayList.addFirst(10);
+        arrayList.addFirst(20);
+        arrayList.addFirst(30);
+        arrayList.addFirst(40);
+        for (int i = 0; i < 23; i++) {
+            arrayList.removeFirst();
+        }
+
+        arrayList.removeLast();
+        arrayList.printDeque();
+        System.out.println(arrayList.size());
 
 
 

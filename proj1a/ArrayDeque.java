@@ -65,23 +65,23 @@ public class ArrayDeque<T> {
     }
 
     public T removeFirst() {
-        if(capacity >= 16 && (double) size / capacity <= 0.25) resize(capacity /2);
-
         if(size == 0) return null;
 
         nextFirst = (nextFirst + 1) % capacity;
         size -= 1;
 
+        if(capacity >= 16 && (double) size / capacity <= 0.25) resize(capacity /2);
+
         return array[nextFirst];
     }
 
     public T removeLast() {
-        if(capacity >= 16 && (double) size / capacity <= 0.25) resize(capacity /2);
-
         if(size == 0) return null;
 
         nextLast = (nextLast + capacity - 1) % capacity;
         size -= 1;
+
+        if(capacity >= 16 && (double) size / capacity <= 0.25) resize(capacity /2);
 
         return array[nextLast];
     }
