@@ -12,16 +12,12 @@ public class ArrayDeque<T> {
     private int nextLast;
 
     public ArrayDeque() {
-        this(capacity);
-    }
-
-
-    public ArrayDeque(int capacity) {
         array = (T[]) new Object[capacity];
         size = 0;
         nextFirst = 4;
         nextLast = 5;
     }
+
 
     private void resize(int capacity){
         T[] temp = (T[]) new Object[capacity];
@@ -70,6 +66,9 @@ public class ArrayDeque<T> {
 
     public T removeFirst() {
         if(capacity >= 16 && (double) size / capacity <= 0.25) resize(capacity /2);
+
+        if(size == 0) return null;
+
         nextFirst += (nextFirst + 1) % capacity;
         size -= 1;
 
@@ -78,6 +77,9 @@ public class ArrayDeque<T> {
 
     public T removeLast() {
         if(capacity >= 16 && (double) size / capacity <= 0.25) resize(capacity /2);
+
+        if(size == 0) return null;
+
         nextLast = (nextLast + capacity - 1) % capacity;
         size -= 1;
 
@@ -85,7 +87,7 @@ public class ArrayDeque<T> {
     }
 
     public T get(int index) {
-
+        if(index < 0 || index >= size) return null;
         return array[(nextFirst + index + 1) % capacity];
 
     }
