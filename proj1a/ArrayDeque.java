@@ -69,7 +69,7 @@ public class ArrayDeque<T> {
 
         if(size == 0) return null;
 
-        nextFirst += (nextFirst + 1) % capacity;
+        nextFirst = (nextFirst + 1) % capacity;
         size -= 1;
 
         return array[nextFirst];

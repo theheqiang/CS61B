@@ -25,6 +25,9 @@ public class ArrayDequeTest {
         arrayList.addFirst(30);
         arrayList.addFirst(40);
         arrayList.addLast(5);
+        arrayList.removeLast();
+        arrayList.removeFirst();
+        System.out.println(arrayList.get(0));
         arrayList.printDeque();
     }
 
