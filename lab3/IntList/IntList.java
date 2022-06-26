@@ -119,7 +119,15 @@ public class IntList {
     }
 
     public static IntList reverse(IntList A){
-        return null;
+        IntList last = null;
+		while(A != null){
+			IntList P = A.rest;
+			A.rest = last;
+			last = A;
+			A = P;
+		}
+		
+		return last;
     }
 
 
